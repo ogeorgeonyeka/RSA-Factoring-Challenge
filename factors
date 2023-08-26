@@ -14,20 +14,26 @@ def factorize(num):
         if num % i == 0:
             return (i, num//i)
     return None
+
 if __name__ == "__main__":
+
     '''Reads the input file.
     '''
     if len(sys.argv) != 2:
         print("Usage: factors <file>")
         exit()
+
     input_file = sys.argv[1]
+
     try:
         with open(input_file, 'r') as f:
             lines = f.readlines()
     except FileNotFoundError:
         print("File not found")
         exit()
+
     start_time = time.time()
+
     '''loops over each line (which should contain one natural number per line),
         and calls factorize on each number.
         If factorize returns a tuple of factors,
